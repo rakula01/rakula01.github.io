@@ -1,467 +1,783 @@
 ---
 layout: null
 ---
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-  <title>Ramya Akula, Ph.D.</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ramya Akula, Ph.D. — AI researcher and applied machine learning leader working across trustworthy AI, healthcare AI, NLP, and computational biology.">
   <meta name="author" content="Ramya Akula">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+  <title>Ramya Akula, Ph.D. | AI Research & Applied Machine Learning</title>
 
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f7f9fc;
+      --surface-strong: #eef3f9;
+      --text: #172033;
+      --muted: #5f6b7a;
+      --accent: #0b63ce;
+      --accent-dark: #084b9a;
+      --border: #dce4ee;
+      --shadow: 0 12px 30px rgba(22, 35, 55, 0.08);
+      --radius: 18px;
+      --max-width: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-dark); }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(220, 228, 238, 0.9);
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 1.04rem;
+      font-weight: 800;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 18px;
+      font-size: 0.93rem;
+      font-weight: 650;
+    }
+
+    .nav-links a { color: #354154; }
+    .nav-links a:hover { color: var(--accent); }
+
+    .hero {
+      padding: 88px 0 62px;
+      background:
+        radial-gradient(circle at 82% 18%, rgba(11, 99, 206, 0.12), transparent 30%),
+        linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.65fr) minmax(240px, 0.65fr);
+      align-items: center;
+      gap: 64px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    h1, h2, h3 { line-height: 1.18; }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.65rem, 7vw, 4.8rem);
+      letter-spacing: -0.045em;
+    }
+
+    .hero-title {
+      margin: 14px 0 0;
+      font-size: clamp(1.2rem, 2.8vw, 1.75rem);
+      font-weight: 750;
+      color: #334155;
+    }
+
+    .hero-tags {
+      margin: 12px 0 22px;
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      margin: 0 0 28px;
+      font-size: 1.08rem;
+      color: #354154;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      font-weight: 750;
+      transition: 160ms ease;
+    }
+
+    .button.primary {
+      color: #fff;
+      background: var(--accent);
+    }
+    .button.primary:hover { background: var(--accent-dark); color: #fff; }
+    .button.secondary { background: #fff; }
+    .button.secondary:hover { background: #edf5ff; }
+
+    .credibility {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .pill {
+      padding: 7px 11px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 999px;
+      font-size: 0.86rem;
+      color: #425067;
+      font-weight: 650;
+    }
+
+    .portrait-wrap {
+      justify-self: center;
+      width: min(310px, 78vw);
+      aspect-ratio: 1;
+      padding: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #dbeafe, #ffffff);
+      box-shadow: var(--shadow);
+    }
+
+    .portrait {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+    }
+
+    section { padding: 72px 0; }
+    section.alt { background: var(--surface); }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      letter-spacing: -0.035em;
+    }
+
+    .section-heading p {
+      max-width: 620px;
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .grid-4, .grid-3, .grid-2 {
+      display: grid;
+      gap: 20px;
+    }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .card {
+      height: 100%;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 5px 18px rgba(22, 35, 55, 0.04);
+    }
+
+    .card h3 { margin: 0 0 10px; font-size: 1.13rem; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .project-label {
+      width: fit-content;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #eaf3ff;
+      color: var(--accent-dark);
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.055em;
+    }
+
+    .project-card ul,
+    .experience-item ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .project-card .project-links { margin-top: auto; font-weight: 750; }
+
+    .experience-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .experience-item {
+      padding: 26px;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      background: #fff;
+      box-shadow: 0 5px 18px rgba(22, 35, 55, 0.04);
+    }
+
+    .experience-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: start;
+      margin-bottom: 10px;
+    }
+
+    .experience-item h3 { margin: 0; font-size: 1.2rem; }
+    .experience-item .organization { margin: 4px 0 0; color: var(--accent); font-weight: 700; }
+    .date { color: var(--muted); white-space: nowrap; font-weight: 650; }
+
+    .publication-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .publication {
+      padding: 18px 20px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .publication p { margin: 4px 0 0; color: var(--muted); }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 22px 14px;
+      border-radius: var(--radius);
+      background: var(--surface-strong);
+    }
+
+    .stat strong { display: block; font-size: 1.6rem; color: var(--accent-dark); }
+    .stat span { color: var(--muted); font-size: 0.9rem; }
+
+    .skill-groups {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .skill-group {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+    .skill-group h3 { margin: 0 0 8px; }
+    .skill-group p { margin: 0; color: var(--muted); }
+
+    .contact-panel {
+      padding: 44px;
+      border-radius: 26px;
+      background: #12233e;
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
+      align-items: center;
+    }
+    .contact-panel h2 { margin: 0 0 8px; font-size: clamp(1.9rem, 4vw, 2.7rem); }
+    .contact-panel p { margin: 0; color: #cbd5e1; max-width: 700px; }
+    .contact-panel .button.secondary { color: #fff; border-color: #fff; background: transparent; }
+    .contact-panel .button.secondary:hover { background: #fff; color: #12233e; }
+
+    footer {
+      padding: 32px 0 42px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 38px; }
+      .portrait-wrap { grid-row: 1; width: 230px; }
+      .hero-copy { max-width: none; }
+      .grid-4, .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 680px) {
+      .container { width: min(calc(100% - 28px), var(--max-width)); }
+      .nav { align-items: flex-start; padding: 16px 0; }
+      .nav-links { display: none; }
+      .hero { padding-top: 48px; }
+      .grid-4, .grid-3, .grid-2, .skill-groups { grid-template-columns: 1fr; }
+      .experience-top { flex-direction: column; gap: 4px; }
+      .date { white-space: normal; }
+      .contact-panel { grid-template-columns: 1fr; padding: 30px; }
+      section { padding: 56px 0; }
+    }
+  </style>
 </head>
 
 <body>
-  <table
-    style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#home">Ramya Akula, Ph.D.</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#expertise">Expertise</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#recognition">Recognition</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-          <!-- ==================== HEADER ==================== -->
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr style="padding:0px">
-                <td style="padding:2.5%;width:70%;vertical-align:middle">
-                  <p class="name" style="text-align: center;">
-                    Ramya Akula, Ph.D.
-                  </p>
-                  <p style="text-align:center;color:#666;margin-top:-4px;">
-                    &nbsp;&bull;&nbsp; Machine Learning Researcher &nbsp;&bull;&nbsp; Trustworthy AI &nbsp;&bull;&nbsp; Computational Biology &nbsp;&bull;&nbsp; NLP <br>
-                    San Jose, California, USA
-                  </p>
-                  <p>
-                    I develop trustworthy machine learning methods for understanding complex biological systems
-                    and human language, with the long-term goal of improving the reliability of AI in healthcare.
-                    My work focuses on a central question:
-                    <em>"How can we build AI systems that are reliable enough to support decisions when mistakes matter?"</em>
-                  </p>
-                  <p>
-                    As a <strong>2022 DARPA Forward Riser</strong>, my research on interpretable self-attention
-                    models for figurative language detection explored how machine learning systems reason under
-                    semantic ambiguity. During my postdoctoral research at
-                    <a href="https://wexnermedical.osu.edu/">The Ohio State University</a>
-                    (Dept. of Internal Medicine, Pulmonary), I developed scalable computational pipelines for
-                    integrating multi-cohort single-cell transcriptomic datasets to study lung aging and
-                    cellular senescence.
-                  </p>
-                  <p>
-                    My future work targets trustworthy clinical AI &mdash; evaluation of conversational systems,
-                    adversarial testing of LLMs, and uncertainty communication &mdash; integrating ML, NLP,
-                    and computational biology.
-                  </p>
-                  <p style="text-align:center">
-                    <a href="mailto:ramya.akula01@gmail.com">Email</a> &nbsp;/&nbsp;
-                    <a href="data/RamyaAkula_CV_2026.pdf">CV</a> &nbsp;/&nbsp;
-                    <a href="https://scholar.google.com/citations?user=ODweo2gAAAAJ&hl=en&oi=ao">Google Scholar</a> &nbsp;/&nbsp;
-                    <a href="https://www.linkedin.com/in/ramya-nischala-akula-2900b5139/">LinkedIn</a>
-                    <!-- &nbsp;/&nbsp; <a href="https://github.com/your-github-username">Github</a> -->
-                  </p>
-                  <p style="text-align:center;font-size:0.9em;color:#666;">
-                    267 Citations &nbsp;&bull;&nbsp; h-index: 9 &nbsp;&bull;&nbsp; i10-index: 9
-                  </p>
-                </td>
-                <td style="padding:2.5%;width:40%;max-width:40%">
-                  <img
-                    style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo"
-                    src="data/ramya.jpeg"
-                    class="hoverZoomLink">
-                </td>
-              </tr>
-            </tbody>
-          </table>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">AI Research · Applied Machine Learning · Interdisciplinary Leadership</p>
+          <h1>Ramya Akula, Ph.D.</h1>
+          <p class="hero-title">AI Researcher and Applied Machine Learning Leader</p>
+          <p class="hero-tags">Trustworthy AI · Healthcare AI · Natural Language Processing · Computational Biology</p>
+          <p class="hero-copy">
+            I develop and evaluate machine-learning systems for complex, high-stakes domains. My work spans trustworthy AI, natural language processing, computational biology, and human-centered decision support. I combine research depth with experience translating ambiguous problems into rigorous, interpretable, and practical AI solutions.
+          </p>
 
-          <!-- ==================== UPDATES ==================== -->
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle">
-                  <h2>Updates</h2>
-                  <p>
-                    &nbsp;<i class="fa fa-share-alt" style="font-size:12px"></i> 2026: Paper accepted to <em>The Journals of Gerontology</em> &mdash; Transcriptomic shifts in human lungs donated after brain and circulatory death and severe Obliterative Bronchiolitis<br>
-                    &nbsp;<i class="fa fa-share-alt" style="font-size:12px"></i> Aug 2025: Completed postdoctoral research at <a href="https://wexnermedical.osu.edu/">The Ohio State University</a><br>
-                    &nbsp;<i class="fa fa-share-alt" style="font-size:12px"></i> 2025: <font color="red">U.S. Patent granted</font> &mdash; Interpretable Multi-Head Self-Attention Architecture for Sarcasm Detection (US Patent 12,210,833)<br>
-                    &nbsp;<i class="fa fa-share-alt" style="font-size:12px"></i> Aug 2024: Joined <a href="https://wexnermedical.osu.edu/">The Ohio State University</a> as Postdoctoral Scholar, Dept. of Internal Medicine (Pulmonary)<br>
-                    &nbsp;<i class="fa fa-share-alt" style="font-size:12px"></i> Jan 2023: Joined <a href="https://www.ucf.edu/">University of Central Florida</a> as Lecturer in the MS FinTech and Computer Science programs<br>
-                    &nbsp;<i class="fa fa-share-alt" style="font-size:12px"></i> Dec 2022: Completed Ph.D. in Computer Science at UCF<br>
-                    &nbsp;<i class="fa fa-share-alt" style="font-size:12px"></i> 2022: Named a <font color="red">DARPA Forward Riser</font> &mdash; recognized for innovative research in interpretable ML for figurative language understanding<br>
-                    &nbsp;<i class="fa fa-share-alt" style="font-size:12px"></i> 2022: Paper accepted to LREC 2022 &mdash; SPEED Score metric for summarization evaluation<br>
-                    &nbsp;<i class="fa fa-share-alt" style="font-size:12px"></i> 2021: <font color="red">First Place</font>, Startup Weekend Orlando &mdash; AI-powered online youth safety platform<br>
-                    &nbsp;<i class="fa fa-share-alt" style="font-size:12px"></i> 2021: Papers accepted to Entropy, ACL Workshop, and HCI International Conference<br>
-                    &nbsp;<i class="fa fa-share-alt" style="font-size:12px"></i> 2019: Selected as <font color="red">NSF I-Corps Entrepreneurial Lead</font> for AI-assisted qualitative analysis platform<br>
-                    &nbsp;<i class="fa fa-share-alt" style="font-size:12px"></i> Aug 2018: Joined UCF as Graduate Research Assistant, Complex Adaptive Systems Lab<br>
-                  </p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="button-row">
+            <a class="button primary" href="#projects">View Projects</a>
+            <a class="button secondary" href="data/RamyaAkula_CV_2026.pdf">Download CV</a>
+            <a class="button secondary" href="mailto:ramya.akula01@gmail.com">Contact</a>
+          </div>
 
-          <!-- ==================== RESEARCH INTERESTS ==================== -->
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle">
-                  <h2>Research Interests</h2>
-                  <table style="width:100%;border-collapse:collapse;">
-                    <tr>
-                      <td style="padding:8px 12px;vertical-align:top;width:33%;border:1px solid #ddd;font-weight:bold;">Natural Language Processing</td>
-                      <td style="padding:8px 12px;vertical-align:top;width:33%;border:1px solid #ddd;font-weight:bold;">Computational Biology</td>
-                      <td style="padding:8px 12px;vertical-align:top;width:33%;border:1px solid #ddd;font-weight:bold;">Trustworthy AI</td>
-                    </tr>
-                    <tr>
-                      <td style="padding:8px 12px;vertical-align:top;border:1px solid #ddd;">Large Language Models, Figurative Language, Text Summarization, Semantic Representation Learning</td>
-                      <td style="padding:8px 12px;vertical-align:top;border:1px solid #ddd;">Single-cell Transcriptomics, Lung Aging, Cellular Senescence, Machine Learning for Biology</td>
-                      <td style="padding:8px 12px;vertical-align:top;border:1px solid #ddd;">Evaluation methodologies, Interpretability, Human-AI Collaboration</td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="credibility" aria-label="Professional highlights">
+            <span class="pill">DARPA Forward Riser</span>
+            <span class="pill">U.S. Patent Holder</span>
+            <span class="pill">267 Citations</span>
+            <span class="pill">Former UCF Lecturer</span>
+            <span class="pill">Former OSU Postdoctoral Scholar</span>
+          </div>
+        </div>
 
-          <!-- ==================== PUBLICATIONS ==================== -->
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle">
-                  <h2>Publications</h2>
-                  <p style="font-size:0.9em;">
-                    Full list on <a href="https://scholar.google.com/citations?user=ODweo2gAAAAJ&hl=en&oi=ao">Google Scholar</a>
-                    (267 citations &nbsp;&bull;&nbsp; h-index: 9 &nbsp;&bull;&nbsp; i10-index: 9).
-                    Research featured by NBC News, IEEE Spectrum, Los Angeles Times, Defense One, ScienceDaily, and ABC Australia.
-                  </p>
+        <div class="portrait-wrap">
+          <img class="portrait" src="data/ramya.jpeg" alt="Portrait of Ramya Akula">
+        </div>
+      </div>
+    </section>
 
-                  <h3 style="margin-bottom:4px;">Peer-Reviewed Journal Articles</h3>
-                  <ul>
-                    <li>
-                      <strong>Akula, R.</strong>, et al.
-                      Transcriptomic shifts in human lungs donated after brain and circulatory death and severe Obliterative Bronchiolitis.
-                      <em>The Journals of Gerontology</em>, 2026.
-                    </li>
-                    <li>
-                      Pinky, J. N., &amp; <strong>Akula, R.</strong> (2025).
-                      Enhancing cryptocurrency market forecasting: Advanced machine learning techniques and industrial engineering contributions.
-                      <em>Advances in Artificial Intelligence Applications in Industrial and Systems Engineering</em>, 197&ndash;262.
-                    </li>
-                    <li>
-                      <strong>Akula, R.</strong>, Garibay, I.
-                      Interpretable Multi-Head Self-Attention Architecture for Sarcasm Detection in Social Media.
-                      <em>Entropy</em>, 2021.
-                    </li>
-                    <li>
-                      <strong>Akula, R.</strong>, Garibay, I.
-                      Viztract: Visualization of complex social networks for easy user perception.
-                      <em>Big Data and Cognitive Computing</em>, 2018.
-                    </li>
-                  </ul>
+    <section id="expertise">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">What I do</p>
+            <h2>Research depth with applied impact</h2>
+            <p>I work across technical research, interdisciplinary collaboration, evaluation, teaching, and early-stage product translation.</p>
+          </div>
+        </div>
 
-                  <h3 style="margin-bottom:4px;">Refereed Conference Proceedings</h3>
-                  <ul>
-                    <li>
-                      <strong>Akula, R.</strong>, Garibay, I.
-                      SPEED Score: Sentence Pair Embeddings Based Evaluation Metric for Abstractive and Extractive Summarization.
-                      <em>Language Resources and Evaluation Conference (LREC)</em>, 2022.
-                    </li>
-                    <li>
-                      <strong>Akula, R.</strong>, Garibay, I.
-                      Explainable Detection of Sarcasm in Social Media.
-                      <em>ACL Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis</em>, 2021.
-                    </li>
-                    <li>
-                      <strong>Akula, R.</strong>, &amp; Garibay, I.
-                      Ethical AI for Social Good.
-                      <em>International Conference on Human&ndash;Computer Interaction</em> (pp. 369&ndash;380). Cham: Springer, 2021.
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="grid-4">
+          <article class="card">
+            <h3>Trustworthy AI</h3>
+            <p>Evaluation, interpretability, robustness, uncertainty, and human oversight for AI systems used in consequential settings.</p>
+          </article>
+          <article class="card">
+            <h3>Healthcare & Computational Biology</h3>
+            <p>Machine learning for single-cell transcriptomics, lung biology, aging, senescence, and multi-cohort biomedical data integration.</p>
+          </article>
+          <article class="card">
+            <h3>NLP & Language Technologies</h3>
+            <p>Figurative-language understanding, summarization evaluation, semantic representation, conversational AI, and responsible language technologies.</p>
+          </article>
+          <article class="card">
+            <h3>Applied AI Strategy</h3>
+            <p>Problem framing, stakeholder discovery, technical roadmaps, product evaluation, and leadership across interdisciplinary teams.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-          <!-- ==================== EXPERIENCE ==================== -->
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle">
-                  <h2>Experience</h2>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+    <section class="alt" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Featured work</p>
+            <h2>Selected projects</h2>
+            <p>Projects that demonstrate technical innovation, cross-domain problem solving, evaluation, and translation from research to practice.</p>
+          </div>
+        </div>
 
-          <table width="100%" align="center" border="0" cellpadding="0">
-            <tbody>
-              
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle;border-bottom:1px solid #eee">
-                  <strong>Postdoctoral Scholar</strong>
-                  <br>
-                  <a href="https://wexnermedical.osu.edu/">The Ohio State University</a>,
-                  Dept. of Internal Medicine (Pulmonary) &mdash; 2024 &ndash; 2025 &nbsp;|&nbsp; Columbus, Ohio
-                  <br><em>Advisor: Dr. Mauricio Rojas</em>
-                  <p>
-                    Developed scalable computational pipelines for integrating multi-cohort single-cell RNA
-                    sequencing datasets to study lung biology (Harmony integration, cell-type annotation,
-                    differential expression). Applied machine learning to characterize aging, senescence, and
-                    cellular heterogeneity in lung tissue. Emphasis on reproducible computational workflows.
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle;border-bottom:1px solid #eee">
-                  <strong>Lecturer &mdash; Computer Science &amp; MS FinTech Program</strong>
-                  <br>
-                  <a href="https://www.ucf.edu/">University of Central Florida</a>,
-                  Orlando, Florida &mdash; 2023 &ndash; 2024
-                  <p>
-                    Designed and taught graduate and undergraduate courses in Artificial Intelligence, Natural
-                    Language Processing, Machine Learning, Data Science, Algorithms, Blockchain, and Smart
-                    Contracts in the Masters in FinTech program. Supervised graduate capstone projects and
-                    mentored undergraduate students while maintaining an active research program.
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle;border-bottom:1px solid #eee">
-                  <strong>Graduate Research Assistant</strong>
-                  <br>
-                  <a href="https://www.ucf.edu/">University of Central Florida</a>,
-                  Dept. of Computer Science &mdash; 2018 &ndash; 2022 &nbsp;|&nbsp; Greater Orlando
-                  <br><em>Advisor: Dr. Ivan Garibay, Complex Adaptive Systems Laboratory</em>
-                  <p>
-                    Research in natural language processing, explainable AI, deep learning, trustworthy machine
-                    learning, and language evaluation metrics. Developed interpretable self-attention models for
-                    figurative language detection and the SPEED Score summarization evaluation metric.
-                    Supported by DARPA SocialSim and DARPA ASIST programs.
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle;border-bottom:1px solid #eee">
-                  <strong>Project Engineer &mdash; Client: Airbus GmbH</strong>
-                  <br>
-                  Umlaut GmbH (formerly P3 Group), Hamburg, Germany &mdash; 2015 &ndash; 2017
-                  <p>
-                    Contributed to the A350 Product Structure Rebuild for Airbus. Participated in stakeholder
-                    meetings, requirements gathering, time estimation, and milestone planning. Developed tooling
-                    to reduce computational overhead in product structure workflows.
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle;border-bottom:1px solid #eee">
-                  <strong>Graduate Research Assistant</strong>
-                  <br>
-                  <a href="https://www.uni-kl.de/">Technical University of Kaiserslautern-Landau (RPTU)</a>,
-                  Dept. of Computer Science &mdash; 2014 &ndash; 2015 &nbsp;|&nbsp; Germany
-                  <br><em>Advisor: Dr. Hans Hagen</em>
-                  <p>
-                    Research in machine learning and visualization of complex social networks.
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle;border-bottom:1px solid #eee">
-                  <strong>Software Quality Assurance Analyst &mdash; Client: Roche GmbH</strong>
-                  <br>
-                  Exco GmbH, Germany &mdash; 2013 &ndash; 2014
-                </td>
-              </tr>
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle;border-bottom:1px solid #eee">
-                  <strong>Graduate Research Assistant</strong>
-                  <br>
-                  <a href="https://www.dfki.de/">Deutsches Forschungszentrum f&uuml;r K&uuml;nstliche Intelligenz (DFKI) GmbH</a>,
-                  AI Research &mdash; 2013 &nbsp;|&nbsp; Germany
-                  <br><em>Advisor: Dr. Didier Stricker</em>
-                  <p>
-                    Research in machine learning and intelligent systems.
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle;border-bottom:1px solid #eee">
-                  <strong>Software Engineer</strong>
-                  <br>
-                  Osmania University, Urban &amp; Environmental Studies &mdash; 2011 &ndash; 2013 &nbsp;|&nbsp; India
-                </td>
-              </tr>
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle">
-                  <strong>Software Developer &mdash; Client: United Health Care</strong>
-                  <br>
-                  Inventurus Software Solutions, India &mdash; 2010 &ndash; 2011
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="grid-2">
+          <article class="card project-card">
+            <span class="project-label">Computational Biology</span>
+            <h3>Multi-Cohort Lung Single-Cell Analysis</h3>
+            <p>Developed scalable and reproducible workflows to integrate heterogeneous single-cell RNA-seq cohorts and study lung aging, donor status, cellular senescence, and cell-type variation.</p>
+            <ul>
+              <li>Multi-cohort integration and quality control</li>
+              <li>Cell-type annotation and differential expression</li>
+              <li>Biological interpretation with pulmonary collaborators</li>
+            </ul>
+            <p class="project-links"><a href="#publications">Related publication →</a></p>
+          </article>
 
-          <!-- ==================== EDUCATION ==================== -->
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle">
-                  <h2>Education</h2>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <article class="card project-card">
+            <span class="project-label">Trustworthy AI · NLP</span>
+            <h3>Interpretable Self-Attention for Sarcasm Detection</h3>
+            <p>Designed an interpretable multi-head self-attention architecture for reasoning about figurative language and semantic ambiguity in social media.</p>
+            <ul>
+              <li>U.S. Patent 12,210,833</li>
+              <li>DARPA Forward Riser recognition</li>
+              <li>Peer-reviewed publication in <em>Entropy</em></li>
+            </ul>
+            <p class="project-links"><a href="#recognition">View recognition →</a></p>
+          </article>
 
-          <table width="100%" align="center" border="0" cellpadding="0">
-            <tbody>
-              <tr>
-                <td style="padding:16px 20px;width:100%;vertical-align:middle;border-bottom:1px solid #eee">
-                  <strong>Doctor of Philosophy, Computer Science</strong>
-                  <br>
-                  <a href="https://www.ucf.edu/">University of Central Florida</a>, 2018 &ndash; 2022
-                  <br><em>Advisor: Dr. Ivan Garibay</em>
-                  <br>Dissertation: <em>Toxic and Figurative Language Detection and Evaluation Metrics for Social Media Content</em>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding:16px 20px;width:100%;vertical-align:middle;border-bottom:1px solid #eee">
-                  <strong>Master of Science, Computer Science</strong>
-                  <br>
-                  <a href="https://www.uni-kl.de/">Technical University of Kaiserslautern</a>, 2013 &ndash; 2015
-                  <br><em>Advisor: Dr. Hans Hagen</em>
-                  <br>Dissertation: <em>Hierarchical Visualization of Complex Social Networks</em>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding:16px 20px;width:100%;vertical-align:middle">
-                  <strong>Bachelor of Technology, Computer Science Engineering</strong>
-                  <br>
-                  <a href="https://www.jntuh.ac.in/">Jawaharlal Nehru Technological University</a>, 2006 &ndash; 2010
-                  <br>Dissertation: <em>Chat Client Application with Multi-thread Execution</em>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <article class="card project-card">
+            <span class="project-label">Evaluation</span>
+            <h3>SPEED Score for Text Summarization</h3>
+            <p>Developed a sentence-pair-embedding-based evaluation metric for abstractive and extractive summarization, addressing limitations of surface-level overlap metrics.</p>
+            <ul>
+              <li>Semantic quality evaluation</li>
+              <li>Comparison with established metrics</li>
+              <li>Published at LREC 2022</li>
+            </ul>
+            <p class="project-links"><a href="#publications">See publication →</a></p>
+          </article>
 
-          <!-- ==================== ACHIEVEMENTS ==================== -->
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle">
-                  <h2>Achievements &amp; Awards</h2>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <article class="card project-card">
+            <span class="project-label">Commercialization</span>
+            <h3>NSF I-Corps: AI-Assisted Qualitative Analysis</h3>
+            <p>Served as Entrepreneurial Lead for an NSF-supported technology commercialization effort focused on translating AI research into a validated customer problem and market opportunity.</p>
+            <ul>
+              <li>Customer discovery and stakeholder interviews</li>
+              <li>Value proposition and use-case refinement</li>
+              <li>Technology validation and commercialization strategy</li>
+            </ul>
+            <p class="project-links"><a href="#recognition">View program details →</a></p>
+          </article>
 
-          <table width="100%" align="center" border="0" cellpadding="0">
-            <tbody>
-              
-              <tr>
-                <td style="padding:16px 20px;width:100%;vertical-align:middle;border-bottom:1px solid #eee">
-                  <strong>U.S. Patent, 2025</strong> &mdash;
-                  Interpretable Multi-Head Self-Attention Architecture for Sarcasm Detection.
-                  Arising from doctoral research on interpretable neural architectures.
-                  US Patent 12,210,833.
-                </td>
-              </tr>
-              <tr>
-                <td style="padding:16px 20px;width:100%;vertical-align:middle;border-bottom:1px solid #eee">
-                  <strong>DARPA Forward Riser,</strong> 2022 &mdash;
-                  Selected for innovative research in interpretable machine learning for figurative language understanding.
-                </td>
-              </tr>
-              <tr>
-                <td style="padding:16px 20px;width:100%;vertical-align:middle">
-                  <strong>First Place, Startup Weekend Orlando, 2021</strong> &mdash;
-                  Recognized for developing an AI-powered online youth safety platform.
-                </td>
-              </tr>
-              <tr>
-                <td style="padding:16px 20px;width:100%;vertical-align:middle;border-bottom:1px solid #eee">
-                  <strong>NSF I-Corps Entrepreneurial Lead, 2019</strong> &mdash;
-                  Selected to lead customer discovery and commercialization activities for an AI-assisted
-                  qualitative analysis platform funded through the National Science Foundation.
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <article class="card project-card">
+            <span class="project-label">AI for Social Good</span>
+            <h3>AI-Powered Online Youth Safety</h3>
+            <p>Contributed to an AI product concept for online youth safety that won first place at Startup Weekend Orlando.</p>
+            <ul>
+              <li>User-centered problem framing</li>
+              <li>Rapid product concept development</li>
+              <li>Cross-functional team collaboration</li>
+            </ul>
+            <p class="project-links"><a href="#recognition">View award →</a></p>
+          </article>
 
-          <!-- ==================== SPONSORED RESEARCH ==================== -->
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle">
-                  <h2>Sponsored Research</h2>
-                  <ul>
-                    <li>
-                      <strong>DARPA ASIST (2018&ndash;2022):</strong> Applied machine learning techniques to improve AI-assisted
-                      decision support for collaborative environments.
-                    </li>
-                    <li>
-                      <strong>DARPA SocialSim (2018&ndash;2022):</strong> Developed interpretable language understanding methods
-                      for analyzing complex social media interactions.
-                    </li>
-                    <li>
-                      <strong>NSF I-Corps (2019):</strong> As Entrepreneurial Lead, translated AI research into
-                      customer discovery, commercialization strategy, and technology validation.
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <article class="card project-card">
+            <span class="project-label">Enterprise Engineering</span>
+            <h3>Airbus A350 Product Structure Program</h3>
+            <p>Supported an enterprise product-structure transformation initiative for Airbus, combining stakeholder coordination, requirements gathering, estimation, and workflow tooling.</p>
+            <ul>
+              <li>Cross-functional stakeholder engagement</li>
+              <li>Requirements and milestone planning</li>
+              <li>Workflow optimization and technical implementation</li>
+            </ul>
+            <p class="project-links"><a href="#experience">See experience →</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-          <!-- ==================== TEACHING & MENTORSHIP ==================== -->
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle">
-                  <h2>Teaching &amp; Mentorship</h2>
-                  <p><strong>University of Central Florida, Lecturer (2023&ndash;2024)</strong></p>
-                  <p><strong>Graduate courses:</strong> Advanced Natural Language Processing, Artificial
-                  Intelligence in FinTech, Machine Learning Applications, Algorithms, Blockchain and Smart
-                  Contracts, Data Science Programming</p>
-                  <p><strong>Undergraduate courses:</strong> Introduction to C, Data Analytics, Programming Foundations</p>
-                  <p><strong>Mentorship (2023&ndash;2024):</strong> Mentored 60 graduate and 20 undergraduate students in machine learning and data science
-                  projects. Guided student teams in applied AI research and software development.</p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+    <section id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Career</p>
+            <h2>Selected experience</h2>
+            <p>A background spanning biomedical research, university teaching, government-sponsored AI, and enterprise engineering.</p>
+          </div>
+        </div>
 
-          <!-- ==================== TECHNICAL EXPERTISE ==================== -->
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle">
-                  <h2>Technical Expertise</h2>
-                  <ul>
-                    <li><strong>Machine Learning:</strong> Deep Learning, Transformer Architectures, Attention Mechanisms, Transfer Learning, Representation Learning, Explainable AI</li>
-                    <li><strong>Natural Language Processing:</strong> Figurative Language Understanding, Text Summarization, Semantic Similarity, Toxic Language Detection, Large Language Models</li>
-                    <li><strong>Computational Biology:</strong> Single-cell RNA Sequencing, Seurat, Harmony, Differential Expression, Cell Annotation, Gene Set Enrichment, Transcriptomics</li>
-                    <li><strong>Statistical &amp; Computational Methods:</strong> Machine Learning Evaluation, Reproducible Computing, Statistical Inference, High-Dimensional Data Analysis, Python, R, Jupyter</li>
-                    <li><strong>Scientific Computing:</strong> High-Performance Computing (HPC), Git, Linux, Docker</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="experience-list">
+          <article class="experience-item">
+            <div class="experience-top">
+              <div>
+                <h3>Postdoctoral Scholar</h3>
+                <p class="organization">The Ohio State University, Department of Internal Medicine (Pulmonary)</p>
+              </div>
+              <span class="date">2024–2025</span>
+            </div>
+            <ul>
+              <li>Developed reproducible computational workflows for integrating multi-cohort single-cell RNA-seq datasets.</li>
+              <li>Collaborated with pulmonary researchers to study lung aging, cellular senescence, and donor-related variation.</li>
+              <li>Led analysis design, cell-type annotation, statistical evaluation, and scientific interpretation.</li>
+            </ul>
+          </article>
 
-        </td>
-      </tr>
-    </tbody>
-  </table>
+          <article class="experience-item">
+            <div class="experience-top">
+              <div>
+                <h3>Lecturer — Computer Science & MS FinTech</h3>
+                <p class="organization">University of Central Florida</p>
+              </div>
+              <span class="date">2023–2024</span>
+            </div>
+            <ul>
+              <li>Taught graduate and undergraduate courses in AI, NLP, machine learning, algorithms, fintech, and programming.</li>
+              <li>Mentored 60 graduate and 20 undergraduate students in applied AI, data science, and software projects.</li>
+              <li>Translated complex technical concepts for audiences with varied levels of experience.</li>
+            </ul>
+          </article>
+
+          <article class="experience-item">
+            <div class="experience-top">
+              <div>
+                <h3>Graduate Research Assistant</h3>
+                <p class="organization">University of Central Florida, Complex Adaptive Systems Laboratory</p>
+              </div>
+              <span class="date">2018–2022</span>
+            </div>
+            <ul>
+              <li>Conducted research in trustworthy AI, NLP, deep learning, explainability, and language evaluation.</li>
+              <li>Developed interpretable self-attention models and the SPEED Score summarization metric.</li>
+              <li>Contributed to research supported by DARPA SocialSim and DARPA ASIST.</li>
+            </ul>
+          </article>
+
+          <article class="experience-item">
+            <div class="experience-top">
+              <div>
+                <h3>Project Engineer — Client: Airbus GmbH</h3>
+                <p class="organization">Umlaut GmbH (formerly P3 Group), Germany</p>
+              </div>
+              <span class="date">2015–2017</span>
+            </div>
+            <ul>
+              <li>Supported the Airbus A350 product-structure transformation program.</li>
+              <li>Participated in stakeholder coordination, requirements gathering, estimation, and milestone planning.</li>
+              <li>Developed tooling to reduce computational overhead in product-structure workflows.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="publications">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Research output</p>
+            <h2>Selected publications</h2>
+            <p>Selected peer-reviewed work across biomedical analytics, interpretable machine learning, language evaluation, and social computing.</p>
+          </div>
+          <a class="button secondary" href="https://scholar.google.com/citations?user=ODweo2gAAAAJ&hl=en&oi=ao">Google Scholar</a>
+        </div>
+
+        <div class="publication-list">
+          <article class="publication">
+            <strong>Transcriptomic shifts in human lungs donated after brain and circulatory death and severe Obliterative Bronchiolitis</strong>
+            <p>Akula, R., et al. <em>The Journals of Gerontology</em>, 2026.</p>
+          </article>
+          <article class="publication">
+            <strong>Interpretable Multi-Head Self-Attention Architecture for Sarcasm Detection in Social Media</strong>
+            <p>Akula, R., & Garibay, I. <em>Entropy</em>, 2021.</p>
+          </article>
+          <article class="publication">
+            <strong>SPEED Score: Sentence Pair Embeddings Based Evaluation Metric for Abstractive and Extractive Summarization</strong>
+            <p>Akula, R., & Garibay, I. <em>Language Resources and Evaluation Conference (LREC)</em>, 2022.</p>
+          </article>
+          <article class="publication">
+            <strong>Explainable Detection of Sarcasm in Social Media</strong>
+            <p>Akula, R., & Garibay, I. <em>ACL Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis</em>, 2021.</p>
+          </article>
+          <article class="publication">
+            <strong>Ethical AI for Social Good</strong>
+            <p>Akula, R., & Garibay, I. <em>International Conference on Human–Computer Interaction</em>, 2021.</p>
+          </article>
+          <article class="publication">
+            <strong>Viztract: Visualization of Complex Social Networks for Easy User Perception</strong>
+            <p>Akula, R., & Garibay, I. <em>Big Data and Cognitive Computing</em>, 2018.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="recognition">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Recognition</p>
+            <h2>Awards, impact & sponsored research</h2>
+          </div>
+        </div>
+
+        <div class="stats" aria-label="Research metrics">
+          <div class="stat"><strong>267</strong><span>Citations</span></div>
+          <div class="stat"><strong>9</strong><span>h-index</span></div>
+          <div class="stat"><strong>9</strong><span>i10-index</span></div>
+          <div class="stat"><strong>80</strong><span>Students mentored</span></div>
+        </div>
+
+        <div class="grid-2" style="margin-top: 24px;">
+          <article class="card">
+            <h3>U.S. Patent, 2025</h3>
+            <p>Interpretable Multi-Head Self-Attention Architecture for Sarcasm Detection. U.S. Patent 12,210,833.</p>
+          </article>
+          <article class="card">
+            <h3>DARPA Forward Riser, 2022</h3>
+            <p>Selected for innovative research in interpretable machine learning for figurative-language understanding.</p>
+          </article>
+          <article class="card">
+            <h3>First Place, Startup Weekend Orlando, 2021</h3>
+            <p>Recognized for developing an AI-powered online youth-safety product concept.</p>
+          </article>
+          <article class="card">
+            <h3>NSF I-Corps Entrepreneurial Lead, 2019</h3>
+            <p>Led customer discovery and commercialization activities for an AI-assisted qualitative-analysis platform.</p>
+          </article>
+        </div>
+
+        <div class="card" style="margin-top: 24px;">
+          <h3>Sponsored Research</h3>
+          <p><strong>DARPA ASIST:</strong> Applied machine learning to AI-assisted decision support for collaborative environments.</p>
+          <p style="margin-top: 10px;"><strong>DARPA SocialSim:</strong> Developed interpretable language-understanding methods for complex social-media interactions.</p>
+          <p style="margin-top: 10px;"><strong>NSF I-Corps:</strong> Translated AI research into customer discovery, commercialization strategy, and technology validation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Capabilities</p>
+            <h2>Technical expertise</h2>
+            <p>Technical fluency across machine learning research, data analysis, biomedical computing, and reproducible workflows.</p>
+          </div>
+        </div>
+
+        <div class="skill-groups">
+          <article class="skill-group">
+            <h3>AI & Machine Learning</h3>
+            <p>Deep learning, transformer architectures, attention mechanisms, explainable AI, representation learning, transfer learning, model evaluation.</p>
+          </article>
+          <article class="skill-group">
+            <h3>Natural Language Processing</h3>
+            <p>Large language models, figurative language, summarization, semantic similarity, toxicity detection, language evaluation metrics.</p>
+          </article>
+          <article class="skill-group">
+            <h3>Computational Biology</h3>
+            <p>Single-cell RNA sequencing, Scanpy, Seurat, Harmony, differential expression, cell annotation, gene-set enrichment, transcriptomics.</p>
+          </article>
+          <article class="skill-group">
+            <h3>Tools & Reproducible Computing</h3>
+            <p>Python, R, PyTorch, TensorFlow, Jupyter, Git, Linux, Docker, statistical inference, high-dimensional data analysis, HPC workflows.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Education</p>
+            <h2>Academic foundation</h2>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Ph.D., Computer Science</h3>
+            <p><a href="https://www.ucf.edu/">University of Central Florida</a>, 2022</p>
+            <p style="margin-top: 8px;">Dissertation: <em>Toxic and Figurative Language Detection and Evaluation Metrics for Social Media Content</em></p>
+          </article>
+          <article class="card">
+            <h3>M.S., Computer Science</h3>
+            <p><a href="https://www.uni-kl.de/">Technical University of Kaiserslautern</a>, 2015</p>
+            <p style="margin-top: 8px;">Thesis: <em>Hierarchical Visualization of Complex Social Networks</em></p>
+          </article>
+          <article class="card">
+            <h3>B.Tech., Computer Science Engineering</h3>
+            <p><a href="https://www.jntuh.ac.in/">Jawaharlal Nehru Technological University</a>, 2010</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-panel">
+          <div>
+            <h2>Let’s connect</h2>
+            <p>I am interested in research, applied AI, healthcare AI, trustworthy AI, technical product strategy, teaching, and interdisciplinary leadership opportunities.</p>
+          </div>
+          <div class="button-row" style="margin: 0;">
+            <a class="button primary" href="mailto:ramya.akula01@gmail.com">Email Me</a>
+            <a class="button secondary" href="https://www.linkedin.com/in/ramya-nischala-akula-2900b5139/">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Ramya Akula. Built with semantic HTML and responsive CSS.
+    </div>
+  </footer>
 </body>
-
 </html>
