@@ -6,55 +6,74 @@ layout: null
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ramya Akula, Ph.D. — AI researcher and applied machine learning leader working across trustworthy AI, healthcare AI, NLP, and computational biology.">
+  <meta name="description" content="Ramya Akula, Ph.D. is an AI research scientist whose work spans interpretable machine learning, language evaluation, and computational biology.">
   <meta name="author" content="Ramya Akula">
-  <title>Ramya Akula, Ph.D. | AI Research & Applied Machine Learning</title>
+  <meta name="theme-color" content="#0c1b33">
+  <title>Ramya Akula, Ph.D. | AI Research Scientist</title>
 
   <style>
     :root {
-      --bg: #ffffff;
-      --surface: #f7f9fc;
-      --surface-strong: #eef3f9;
-      --text: #172033;
-      --muted: #5f6b7a;
-      --accent: #0b63ce;
-      --accent-dark: #084b9a;
-      --border: #dce4ee;
-      --shadow: 0 12px 30px rgba(22, 35, 55, 0.08);
-      --radius: 18px;
-      --max-width: 1120px;
+      --navy: #0c1b33;
+      --navy-soft: #142846;
+      --blue: #1769c2;
+      --blue-dark: #0f4f94;
+      --sky: #eaf4ff;
+      --ink: #172033;
+      --muted: #5d6878;
+      --line: #dce4ee;
+      --paper: #ffffff;
+      --wash: #f6f8fb;
+      --success: #0e6f58;
+      --shadow: 0 16px 42px rgba(12, 27, 51, 0.09);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --max-width: 1160px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
+      color: var(--ink);
+      background: var(--paper);
       font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background: var(--bg);
       line-height: 1.65;
+      text-rendering: optimizeLegibility;
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { color: var(--accent-dark); }
-    img { max-width: 100%; display: block; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { color: var(--blue-dark); }
+    img { display: block; max-width: 100%; }
+    strong { color: var(--ink); }
 
     .container {
       width: min(calc(100% - 40px), var(--max-width));
       margin: 0 auto;
     }
 
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 10px;
+      z-index: 1000;
+      padding: 10px 14px;
+      color: #fff;
+      background: var(--navy);
+      border-radius: 8px;
+    }
+    .skip-link:focus { left: 10px; }
+
     .site-header {
       position: sticky;
       top: 0;
       z-index: 50;
-      border-bottom: 1px solid rgba(220, 228, 238, 0.9);
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(220, 228, 238, 0.92);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
     }
 
     .nav {
-      min-height: 68px;
+      min-height: 70px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -62,734 +81,1178 @@ layout: null
     }
 
     .brand {
-      font-size: 1.04rem;
-      font-weight: 800;
-      color: var(--text);
+      color: var(--navy);
+      font-weight: 850;
+      letter-spacing: -0.015em;
       white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       justify-content: flex-end;
-      gap: 18px;
-      font-size: 0.93rem;
-      font-weight: 650;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 0.92rem;
+      font-weight: 700;
     }
-
-    .nav-links a { color: #354154; }
-    .nav-links a:hover { color: var(--accent); }
+    .nav-links a { color: #3e4a5d; }
+    .nav-links a:hover { color: var(--blue); }
 
     .hero {
-      padding: 88px 0 62px;
+      position: relative;
+      overflow: hidden;
+      padding: 96px 0 72px;
       background:
-        radial-gradient(circle at 82% 18%, rgba(11, 99, 206, 0.12), transparent 30%),
-        linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);
+        radial-gradient(circle at 85% 18%, rgba(23, 105, 194, 0.17), transparent 28%),
+        linear-gradient(180deg, #f9fcff 0%, #ffffff 100%);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -45% auto;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      border: 90px solid rgba(23, 105, 194, 0.035);
+      pointer-events: none;
     }
 
     .hero-grid {
+      position: relative;
+      z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1.65fr) minmax(240px, 0.65fr);
+      grid-template-columns: minmax(0, 1.55fr) minmax(250px, 0.55fr);
       align-items: center;
-      gap: 64px;
+      gap: 72px;
     }
 
     .eyebrow {
       margin: 0 0 12px;
-      color: var(--accent);
-      font-weight: 800;
-      letter-spacing: 0.08em;
+      color: var(--blue-dark);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      font-size: 0.8rem;
     }
 
-    h1, h2, h3 { line-height: 1.18; }
+    h1, h2, h3 { line-height: 1.17; }
     h1 {
       margin: 0;
-      font-size: clamp(2.65rem, 7vw, 4.8rem);
-      letter-spacing: -0.045em;
+      font-size: clamp(2.9rem, 7vw, 5.4rem);
+      letter-spacing: -0.052em;
+      color: var(--navy);
+    }
+    h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.038em;
+    }
+    h3 { color: var(--navy); }
+
+    .hero-role {
+      margin: 16px 0 0;
+      color: #304158;
+      font-size: clamp(1.25rem, 2.6vw, 1.8rem);
+      font-weight: 760;
     }
 
-    .hero-title {
-      margin: 14px 0 0;
-      font-size: clamp(1.2rem, 2.8vw, 1.75rem);
-      font-weight: 750;
-      color: #334155;
-    }
-
-    .hero-tags {
-      margin: 12px 0 22px;
-      color: var(--muted);
-      font-weight: 650;
+    .hero-focus {
+      margin: 11px 0 22px;
+      color: var(--blue-dark);
+      font-weight: 760;
     }
 
     .hero-copy {
-      max-width: 760px;
-      margin: 0 0 28px;
-      font-size: 1.08rem;
+      max-width: 780px;
+      margin: 0;
       color: #354154;
+      font-size: 1.08rem;
     }
 
     .button-row {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 24px;
+      margin-top: 28px;
     }
 
     .button {
+      min-height: 46px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 44px;
+      gap: 8px;
       padding: 0 18px;
+      border: 1px solid var(--blue);
       border-radius: 999px;
-      border: 1px solid var(--accent);
-      font-weight: 750;
-      transition: 160ms ease;
+      font-weight: 780;
+      transition: transform 150ms ease, background 150ms ease, color 150ms ease;
+    }
+    .button:hover { transform: translateY(-1px); }
+    .button.primary { color: #fff; background: var(--blue); }
+    .button.primary:hover { color: #fff; background: var(--blue-dark); }
+    .button.secondary { color: var(--blue-dark); background: #fff; }
+    .button.secondary:hover { background: var(--sky); }
+    .button.dark { color: #fff; border-color: #fff; background: transparent; }
+    .button.dark:hover { color: var(--navy); background: #fff; }
+
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 34px;
+      max-width: 860px;
+    }
+    .proof-item {
+      padding: 14px 15px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.92);
+    }
+    .proof-item strong {
+      display: block;
+      color: var(--navy);
+      font-size: 0.96rem;
+    }
+    .proof-item span {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.79rem;
     }
 
-    .button.primary {
-      color: #fff;
-      background: var(--accent);
-    }
-    .button.primary:hover { background: var(--accent-dark); color: #fff; }
-    .button.secondary { background: #fff; }
-    .button.secondary:hover { background: #edf5ff; }
-
-    .credibility {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .pill {
-      padding: 7px 11px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 999px;
-      font-size: 0.86rem;
-      color: #425067;
-      font-weight: 650;
-    }
-
-    .portrait-wrap {
+    .portrait-frame {
       justify-self: center;
-      width: min(310px, 78vw);
-      aspect-ratio: 1;
-      padding: 10px;
+      width: min(315px, 78vw);
+      padding: 11px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #dbeafe, #ffffff);
+      background: linear-gradient(145deg, #d7eaff, #ffffff 58%, #d8e4f1);
       box-shadow: var(--shadow);
     }
-
     .portrait {
       width: 100%;
-      height: 100%;
+      aspect-ratio: 1;
       object-fit: cover;
       object-position: center;
       border-radius: 50%;
     }
 
-    section { padding: 72px 0; }
-    section.alt { background: var(--surface); }
+    section { padding: 80px 0; }
+    section.alt { background: var(--wash); }
+    section.dark { color: #fff; background: var(--navy); }
 
     .section-heading {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 30px;
+      max-width: 780px;
+      margin-bottom: 34px;
     }
-
-    .section-heading h2 {
-      margin: 0;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      letter-spacing: -0.035em;
-    }
-
-    .section-heading p {
-      max-width: 620px;
-      margin: 8px 0 0;
+    .section-heading p:last-child {
+      margin: 12px 0 0;
       color: var(--muted);
+      font-size: 1.02rem;
+    }
+    .dark .section-heading h2 { color: #fff; }
+    .dark .section-heading p:last-child { color: #cbd5e1; }
+    .dark .eyebrow { color: #86bfff; }
+
+    .thesis-panel {
+      display: grid;
+      grid-template-columns: 0.9fr 1.6fr;
+      gap: 36px;
+      align-items: start;
+      padding: 38px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+    .thesis-panel h3 {
+      margin: 0;
+      font-size: 1.42rem;
+    }
+    .thesis-panel p {
+      margin: 0;
+      color: #445166;
+      font-size: 1.04rem;
     }
 
-    .grid-4, .grid-3, .grid-2 {
+    .contribution-list { display: grid; gap: 24px; }
+    .contribution-card {
       display: grid;
-      gap: 20px;
+      grid-template-columns: 0.72fr 1.55fr;
+      gap: 34px;
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: #fff;
+      box-shadow: 0 8px 26px rgba(12, 27, 51, 0.055);
     }
-    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .contribution-index {
+      color: var(--blue-dark);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .contribution-card h3 {
+      margin: 9px 0 11px;
+      font-size: 1.55rem;
+    }
+    .contribution-summary { margin: 0; color: var(--muted); }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .evidence-box {
+      padding: 15px 16px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: var(--wash);
+    }
+    .evidence-box strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.84rem;
+      letter-spacing: 0.02em;
+    }
+    .evidence-box p { margin: 0; color: #526074; font-size: 0.9rem; }
+
+    .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      margin-top: 18px;
+      font-size: 0.91rem;
+      font-weight: 750;
+    }
+
+    .grid-3, .grid-2 { display: grid; gap: 20px; }
     .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
     .card {
       height: 100%;
-      padding: 24px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
       background: #fff;
-      box-shadow: 0 5px 18px rgba(22, 35, 55, 0.04);
     }
-
-    .card h3 { margin: 0 0 10px; font-size: 1.13rem; }
+    .card h3 { margin: 0 0 10px; font-size: 1.12rem; }
     .card p { margin: 0; color: var(--muted); }
+    .card ul { margin: 13px 0 0; padding-left: 19px; color: var(--muted); }
 
-    .project-card {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
+    .path-card {
+      position: relative;
+      overflow: hidden;
+      padding-top: 30px;
+    }
+    .path-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--blue);
     }
 
-    .project-label {
-      width: fit-content;
-      padding: 5px 9px;
-      border-radius: 999px;
-      background: #eaf3ff;
-      color: var(--accent-dark);
-      font-size: 0.75rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.055em;
-    }
-
-    .project-card ul,
-    .experience-item ul {
-      margin: 0;
-      padding-left: 20px;
-      color: var(--muted);
-    }
-
-    .project-card .project-links { margin-top: auto; font-weight: 750; }
-
-    .experience-list {
+    .timeline { display: grid; gap: 18px; }
+    .timeline-item {
       display: grid;
-      gap: 18px;
-    }
-
-    .experience-item {
-      padding: 26px;
-      border-left: 4px solid var(--accent);
-      border-radius: 0 var(--radius) var(--radius) 0;
+      grid-template-columns: 180px 1fr;
+      gap: 28px;
+      padding: 25px 28px;
+      border-left: 4px solid var(--blue);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
       background: #fff;
-      box-shadow: 0 5px 18px rgba(22, 35, 55, 0.04);
+      box-shadow: 0 7px 22px rgba(12, 27, 51, 0.045);
     }
+    .timeline-meta { color: var(--muted); font-size: 0.91rem; font-weight: 720; }
+    .timeline-item h3 { margin: 0; font-size: 1.19rem; }
+    .organization { margin: 4px 0 10px; color: var(--blue-dark); font-weight: 760; }
+    .timeline-item ul { margin: 0; padding-left: 20px; color: var(--muted); }
 
-    .experience-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      align-items: start;
-      margin-bottom: 10px;
-    }
-
-    .experience-item h3 { margin: 0; font-size: 1.2rem; }
-    .experience-item .organization { margin: 4px 0 0; color: var(--accent); font-weight: 700; }
-    .date { color: var(--muted); white-space: nowrap; font-weight: 650; }
-
-    .publication-list {
+    .validation-grid {
       display: grid;
-      gap: 14px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .validation-card {
+      padding: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.17);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.065);
+    }
+    .validation-card strong { color: #fff; display: block; font-size: 1.08rem; }
+    .validation-card span { display: block; margin-top: 6px; color: #cbd5e1; font-size: 0.9rem; }
+
+    .verification-note {
+      margin-top: 22px;
+      color: #b8c7d9;
+      font-size: 0.86rem;
     }
 
+    .publication-list { display: grid; gap: 14px; }
     .publication {
-      padding: 18px 20px;
-      border: 1px solid var(--border);
+      padding: 20px 22px;
+      border: 1px solid var(--line);
       border-radius: 14px;
       background: #fff;
     }
+    .publication-title { font-weight: 790; color: var(--navy); }
+    .publication-meta { margin: 5px 0 0; color: var(--muted); }
+    .publication-links { margin-top: 8px; font-size: 0.89rem; font-weight: 740; }
 
-    .publication p { margin: 4px 0 0; color: var(--muted); }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .stat {
-      text-align: center;
-      padding: 22px 14px;
-      border-radius: var(--radius);
-      background: var(--surface-strong);
-    }
-
-    .stat strong { display: block; font-size: 1.6rem; color: var(--accent-dark); }
-    .stat span { color: var(--muted); font-size: 0.9rem; }
-
-    .skill-groups {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .skill-group {
-      padding: 22px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: #fff;
-    }
-    .skill-group h3 { margin: 0 0 8px; }
-    .skill-group p { margin: 0; color: var(--muted); }
+    .capability-group h3 { margin-bottom: 9px; }
+    .capability-group p { font-size: 0.95rem; }
 
     .contact-panel {
-      padding: 44px;
-      border-radius: 26px;
-      background: #12233e;
-      color: #fff;
       display: grid;
       grid-template-columns: 1fr auto;
-      gap: 28px;
       align-items: center;
+      gap: 28px;
+      padding: 44px;
+      color: #fff;
+      border-radius: 28px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-soft));
+      box-shadow: var(--shadow);
     }
-    .contact-panel h2 { margin: 0 0 8px; font-size: clamp(1.9rem, 4vw, 2.7rem); }
-    .contact-panel p { margin: 0; color: #cbd5e1; max-width: 700px; }
-    .contact-panel .button.secondary { color: #fff; border-color: #fff; background: transparent; }
-    .contact-panel .button.secondary:hover { background: #fff; color: #12233e; }
+    .contact-panel h2 { color: #fff; }
+    .contact-panel p { max-width: 730px; margin: 10px 0 0; color: #d5deea; }
 
     footer {
       padding: 32px 0 42px;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       text-align: center;
     }
 
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 38px; }
-      .portrait-wrap { grid-row: 1; width: 230px; }
-      .hero-copy { max-width: none; }
-      .grid-4, .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .stats { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 940px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 42px; }
+      .portrait-frame { grid-row: 1; width: 235px; }
+      .proof-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .contribution-card, .thesis-panel { grid-template-columns: 1fr; }
+      .validation-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
-    @media (max-width: 680px) {
+    @media (max-width: 700px) {
       .container { width: min(calc(100% - 28px), var(--max-width)); }
-      .nav { align-items: flex-start; padding: 16px 0; }
+      .nav { padding: 15px 0; align-items: flex-start; }
       .nav-links { display: none; }
-      .hero { padding-top: 48px; }
-      .grid-4, .grid-3, .grid-2, .skill-groups { grid-template-columns: 1fr; }
-      .experience-top { flex-direction: column; gap: 4px; }
-      .date { white-space: normal; }
+      .hero { padding: 56px 0; }
+      section { padding: 60px 0; }
+      .proof-strip, .evidence-grid, .grid-3, .grid-2, .validation-grid { grid-template-columns: 1fr; }
+      .contribution-card { padding: 24px; }
+      .timeline-item { grid-template-columns: 1fr; gap: 6px; }
       .contact-panel { grid-template-columns: 1fr; padding: 30px; }
-      section { padding: 56px 0; }
     }
+
+
+    /* Polished institutional visual system */
+    :root {
+      --navy: #0a1930;
+      --navy-soft: #122a4b;
+      --blue: #155fa8;
+      --blue-dark: #0c477f;
+      --sky: #eaf3fb;
+      --ink: #172033;
+      --muted: #5b6676;
+      --line: #d8e0e9;
+      --paper: #fffefb;
+      --wash: #f4f7fa;
+      --gold: #b28a4a;
+      --shadow: 0 18px 48px rgba(10, 25, 48, 0.09);
+    }
+
+    body {
+      background:
+        linear-gradient(rgba(10, 25, 48, 0.018) 1px, transparent 1px),
+        var(--paper);
+      background-size: 100% 36px;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0 0 auto;
+      height: 4px;
+      z-index: 80;
+      background: linear-gradient(90deg, var(--blue-dark), var(--blue), var(--gold));
+    }
+
+    h1, h2, .thesis-panel h3, .contribution-card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 700;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(3.15rem, 7vw, 5.65rem);
+      letter-spacing: -0.055em;
+    }
+
+    h2 {
+      max-width: 850px;
+      letter-spacing: -0.035em;
+    }
+
+    .site-header {
+      top: 4px;
+      box-shadow: 0 8px 24px rgba(10, 25, 48, 0.035);
+    }
+
+    .brand {
+      display: grid;
+      gap: 1px;
+      line-height: 1.1;
+    }
+    .brand span {
+      font-size: 1.01rem;
+      letter-spacing: -0.01em;
+    }
+    .brand small {
+      color: var(--muted);
+      font-size: 0.65rem;
+      font-weight: 760;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 24px 0 22px;
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: 15px;
+      height: 2px;
+      background: var(--blue);
+      transition: right 160ms ease;
+    }
+    .nav-links a:hover::after { right: 0; }
+
+    .hero {
+      padding: 112px 0 84px;
+      border-bottom: 1px solid rgba(216, 224, 233, 0.85);
+      background:
+        radial-gradient(circle at 86% 18%, rgba(21, 95, 168, 0.16), transparent 27%),
+        linear-gradient(135deg, #f8fbff 0%, #fffefb 58%, #f7f2e9 100%);
+    }
+
+    .hero-grid { grid-template-columns: minmax(0, 1.62fr) minmax(270px, 0.5fr); }
+
+    .hero-role {
+      margin-top: 19px;
+      color: var(--navy-soft);
+      letter-spacing: -0.02em;
+    }
+
+    .hero-focus {
+      max-width: 780px;
+      padding-left: 15px;
+      border-left: 3px solid var(--gold);
+      color: var(--blue-dark);
+      font-size: 1.02rem;
+      line-height: 1.55;
+    }
+
+    .hero-copy {
+      max-width: 755px;
+      color: #3d485a;
+      font-size: 1.06rem;
+      line-height: 1.78;
+    }
+
+    .portrait-frame {
+      position: relative;
+      width: min(330px, 80vw);
+      padding: 9px;
+      border: 1px solid rgba(21, 95, 168, 0.19);
+      background: linear-gradient(145deg, #e6f0fa, #ffffff 54%, #eee4d5);
+      box-shadow: 0 24px 65px rgba(10, 25, 48, 0.14);
+    }
+    .portrait-frame::after {
+      content: "AI RESEARCH";
+      position: absolute;
+      right: -26px;
+      bottom: 25px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--navy);
+      background: rgba(255, 254, 251, 0.96);
+      box-shadow: 0 8px 24px rgba(10, 25, 48, 0.09);
+      font-size: 0.66rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+    }
+
+    .button {
+      border-radius: 8px;
+      box-shadow: 0 5px 14px rgba(10, 25, 48, 0.035);
+    }
+
+    .proof-strip { gap: 10px; }
+    .proof-item {
+      position: relative;
+      min-height: 84px;
+      padding: 16px 16px 14px;
+      overflow: hidden;
+      border-radius: 10px;
+      border-top: 3px solid var(--blue);
+      box-shadow: 0 7px 20px rgba(10, 25, 48, 0.04);
+    }
+    .proof-item:nth-child(2) { border-top-color: var(--gold); }
+    .proof-item:nth-child(3) { border-top-color: #526f8e; }
+    .proof-item:nth-child(4) { border-top-color: #6b7d61; }
+
+    section { position: relative; }
+    section:not(.hero)::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: min(calc(100% - 40px), var(--max-width));
+      height: 1px;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, transparent, rgba(216, 224, 233, 0.85), transparent);
+    }
+
+    .section-heading { margin-bottom: 40px; }
+    .section-heading p:last-child { max-width: 720px; line-height: 1.75; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blue-dark);
+    }
+    .eyebrow::before {
+      content: "";
+      width: 22px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .thesis-panel {
+      position: relative;
+      overflow: hidden;
+      padding: 44px;
+      border-radius: 14px;
+      border-left: 5px solid var(--gold);
+      box-shadow: 0 18px 50px rgba(10, 25, 48, 0.08);
+    }
+    .thesis-panel::after {
+      content: "“";
+      position: absolute;
+      top: -28px;
+      right: 28px;
+      color: rgba(21, 95, 168, 0.07);
+      font-family: Georgia, serif;
+      font-size: 11rem;
+      line-height: 1;
+    }
+
+    .contribution-list { counter-reset: contribution; }
+    .contribution-card {
+      position: relative;
+      padding: 38px;
+      border-radius: 16px;
+      border-left: 5px solid var(--blue);
+      box-shadow: 0 14px 36px rgba(10, 25, 48, 0.07);
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+    .contribution-card:nth-child(2) { border-left-color: var(--gold); }
+    .contribution-card:nth-child(3) { border-left-color: #5d7654; }
+    .contribution-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 48px rgba(10, 25, 48, 0.1);
+    }
+
+    .contribution-index {
+      display: inline-block;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .evidence-box {
+      min-height: 132px;
+      border-radius: 9px;
+      background: linear-gradient(180deg, #f9fbfd, #f3f6f9);
+    }
+    .evidence-box strong {
+      color: var(--blue-dark);
+      font-size: 0.77rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .link-row a, .publication-links a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    .card, .timeline-item, .publication {
+      box-shadow: 0 8px 24px rgba(10, 25, 48, 0.045);
+    }
+
+    .path-card {
+      border-radius: 12px;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+    .path-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 34px rgba(10, 25, 48, 0.085);
+    }
+    .path-card::before { height: 4px; }
+    .path-card:nth-child(2)::before { background: var(--gold); }
+    .path-card:nth-child(3)::before { background: #5d7654; }
+
+    .timeline-item {
+      border-left-width: 3px;
+      border-radius: 0 12px 12px 0;
+    }
+    .timeline-meta {
+      padding-top: 3px;
+      color: var(--blue-dark);
+      font-size: 0.82rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    section.dark {
+      background:
+        radial-gradient(circle at 88% 16%, rgba(255,255,255,0.08), transparent 28%),
+        linear-gradient(145deg, #09172c, #102642);
+    }
+    .validation-card {
+      min-height: 145px;
+      border-radius: 11px;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+    a.validation-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,0.4);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .publication-list { counter-reset: publications; }
+    .publication {
+      position: relative;
+      padding: 22px 24px 22px 70px;
+      border-radius: 10px;
+      transition: border-color 150ms ease, transform 150ms ease;
+    }
+    .publication::before {
+      counter-increment: publications;
+      content: counter(publications, decimal-leading-zero);
+      position: absolute;
+      left: 22px;
+      top: 21px;
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+    }
+    .publication:hover {
+      transform: translateX(2px);
+      border-color: #b7c5d5;
+    }
+
+    .capability-group {
+      border-radius: 12px;
+      border-top: 3px solid #d8e0e9;
+    }
+    .capability-group:nth-child(1), .capability-group:nth-child(2) { border-top-color: var(--blue); }
+    .capability-group:nth-child(3), .capability-group:nth-child(4) { border-top-color: var(--gold); }
+    .capability-group:nth-child(5), .capability-group:nth-child(6) { border-top-color: #5d7654; }
+
+    .contact-panel {
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.09);
+      background:
+        linear-gradient(110deg, rgba(255,255,255,0.035), transparent 45%),
+        linear-gradient(135deg, var(--navy), var(--navy-soft));
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      background: #f7f8fa;
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(21, 95, 168, 0.35);
+      outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+
+    @media print {
+      body { background: #fff; font-size: 10.5pt; }
+      body::before, .site-header, .button-row, .portrait-frame::after { display: none !important; }
+      .hero { padding: 28px 0; background: #fff; }
+      section { padding: 28px 0; break-inside: avoid; }
+      .contribution-card, .timeline-item, .publication, .card, .thesis-panel {
+        box-shadow: none !important;
+        break-inside: avoid;
+      }
+      .dark { color: #000 !important; background: #fff !important; }
+      .dark h2, .dark strong, .dark .section-heading h2 { color: #000 !important; }
+      .dark span, .dark p, .dark .section-heading p:last-child { color: #444 !important; }
+      .validation-card { border-color: #bbb; background: #fff; }
+      a { color: #000; text-decoration: none; }
+    }
+
   </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="#home">Ramya Akula, Ph.D.</a>
+      <a class="brand" href="#home">
+        <span>Ramya Akula, Ph.D.</span>
+        <small>Research Portfolio</small>
+      </a>
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#expertise">Expertise</a>
-        <a href="#projects">Projects</a>
+        <a href="#contributions">Research</a>
+        <a href="#translation">Translation</a>
         <a href="#experience">Experience</a>
-        <a href="#publications">Publications</a>
         <a href="#recognition">Recognition</a>
+        <a href="#publications">Publications</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow">AI Research · Applied Machine Learning · Interdisciplinary Leadership</p>
+          <p class="eyebrow">Interpretable AI · Language Evaluation · Computational Biology</p>
           <h1>Ramya Akula, Ph.D.</h1>
-          <p class="hero-title">AI Researcher and Applied Machine Learning Leader</p>
-          <p class="hero-tags">Trustworthy AI · Generative AI · Natural Language Processing · Computer Vision · Computational Biology</p>
+          <p class="hero-role">AI Research Scientist</p>
+          <p class="hero-focus">Building interpretable and evaluation-driven machine-learning methods for complex scientific and human-centered problems.</p>
           <p class="hero-copy">
-            I develop and evaluate machine-learning systems for complex, high-stakes domains. My work spans trustworthy AI, natural language processing, computational biology, and human-centered decision support. I combine research depth with experience translating ambiguous problems into rigorous, interpretable, and practical AI solutions.
+            My research connects methodological machine learning with consequential applications. I have developed interpretable models for figurative-language understanding, proposed a semantic evaluation metric for text summarization, and built reproducible single-cell analysis workflows for lung-aging research. Across these areas, I focus on making computational methods more transparent, measurable, and scientifically useful.
           </p>
 
           <div class="button-row">
-            <a class="button primary" href="#projects">View Projects</a>
-            <a class="button secondary" href="mailto:ramya.akula01@gmail.com">Contact</a>
+            <a class="button primary" href="#contributions">Explore Research Contributions</a>
+            <a class="button secondary" href="data/RamyaAkula_CV_2026.pdf">View CV</a>
+            <a class="button secondary" href="https://scholar.google.com/citations?user=ODweo2gAAAAJ&hl=en&oi=ao">Google Scholar</a>
           </div>
 
-          <div class="credibility" aria-label="Professional highlights">
-            <span class="pill">DARPA Forward Riser</span>
-            <span class="pill">U.S. Patent Holder</span>
-            <span class="pill">Former OSU Postdoctoral Scholar</span>
+          <div class="proof-strip" aria-label="Selected professional evidence">
+            <div class="proof-item"><strong>U.S. Patent</strong><span>Interpretable self-attention architecture</span></div>
+            <div class="proof-item"><strong>DARPA Forward Riser</strong><span>Research recognition, 2022</span></div>
+            <div class="proof-item"><strong>Peer-Reviewed Research</strong><span>AI, NLP, social computing, and biomedicine</span></div>
+            <div class="proof-item"><strong>Cross-Sector Experience</strong><span>Academia, healthcare, and enterprise engineering</span></div>
           </div>
         </div>
 
-        <div class="portrait-wrap">
+        <div class="portrait-frame">
           <img class="portrait" src="data/ramya.jpeg" alt="Portrait of Ramya Akula">
         </div>
       </div>
     </section>
 
-    <section id="expertise">
+    <section>
+      <div class="container">
+        <div class="thesis-panel">
+          <div>
+            <p class="eyebrow">Research identity</p>
+            <h3>From interpretable language systems to computational discovery</h3>
+          </div>
+          <p>
+            My work is unified by a central question: <strong>how can machine-learning systems produce evidence that people can inspect, evaluate, and use?</strong> In natural language processing, this has meant designing interpretable architectures and semantic evaluation methods. In computational biology, it has meant constructing reproducible analytical workflows that connect high-dimensional data to biologically meaningful questions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="contributions">
       <div class="container">
         <div class="section-heading">
-          <div>
-            <p class="eyebrow">What I do</p>
-            <h2>Research Depth with Applied Impact</h2>
-            <p>I work across technical research, interdisciplinary collaboration, evaluation, teaching, and early-stage product translation.</p>
-          </div>
+          <p class="eyebrow">Selected research contributions</p>
+          <h2>Original work, supporting evidence, and impact</h2>
+          <p>Each contribution below is presented with the problem addressed, the specific technical contribution, and independently verifiable research outputs.</p>
         </div>
 
-        <div class="grid-4">
-          <article class="card">
-            <h3>Trustworthy AI</h3>
-            <p>Evaluation, interpretability, robustness, uncertainty, and human oversight for AI systems used in consequential settings.</p>
+        <div class="contribution-list">
+          <article class="contribution-card">
+            <div>
+              <span class="contribution-index">Contribution 01</span>
+              <h3>Interpretable self-attention for sarcasm detection</h3>
+              <p class="contribution-summary">An interpretable multi-head self-attention architecture designed to identify cues associated with sarcasm and figurative-language ambiguity in social-media text.</p>
+            </div>
+            <div>
+              <div class="evidence-grid">
+                <div class="evidence-box">
+                  <strong>Research problem</strong>
+                  <p>Sarcasm can invert literal meaning, creating difficulty for language-understanding and social-media analysis systems.</p>
+                </div>
+                <div class="evidence-box">
+                  <strong>Technical contribution</strong>
+                  <p>Developed an attention-based architecture that combines predictive performance with interpretable attention patterns.</p>
+                </div>
+                <div class="evidence-box">
+                  <strong>Research output</strong>
+                  <p>Published in <em>Entropy</em> in 2021 and selected as an Editor’s Choice article.</p>
+                </div>
+                <div class="evidence-box">
+                  <strong>External validation</strong>
+                  <p>Associated work received U.S. Patent 12,210,833 and DARPA Forward Riser recognition.</p>
+                </div>
+              </div>
+              <div class="link-row">
+                <a href="https://www.mdpi.com/1099-4300/23/4/394">Peer-reviewed article →</a>
+                <a href="https://patents.google.com/patent/US12210833B2/en">U.S. patent record →</a>
+                <a href="https://forward.darpa.mil/risers">DARPA Forward Risers →</a>
+              </div>
+            </div>
           </article>
-          <article class="card">
-            <h3>Healthcare & Computational Biology</h3>
-            <p>Machine learning for single-cell transcriptomics, lung biology, aging, senescence, and multi-cohort biomedical data integration.</p>
+
+          <article class="contribution-card">
+            <div>
+              <span class="contribution-index">Contribution 02</span>
+              <h3>SPEED Score for semantic text-summarization evaluation</h3>
+              <p class="contribution-summary">A sentence-pair-embedding-based metric for evaluating abstractive and extractive summaries beyond surface-level word overlap.</p>
+            </div>
+            <div>
+              <div class="evidence-grid">
+                <div class="evidence-box">
+                  <strong>Research problem</strong>
+                  <p>Traditional metrics such as ROUGE and BLEU can miss semantic equivalence when generated text differs lexically from a reference.</p>
+                </div>
+                <div class="evidence-box">
+                  <strong>Technical contribution</strong>
+                  <p>Proposed using transformer models trained on sentence-pair tasks to compute semantic similarity between generated and reference summaries.</p>
+                </div>
+                <div class="evidence-box">
+                  <strong>Evaluation</strong>
+                  <p>Compared the metric with established approaches on summarization benchmarks, including SummEval.</p>
+                </div>
+                <div class="evidence-box">
+                  <strong>Research output</strong>
+                  <p>Published in the Proceedings of the Thirteenth Language Resources and Evaluation Conference, LREC 2022.</p>
+                </div>
+              </div>
+              <div class="link-row">
+                <a href="https://aclanthology.org/2022.lrec-1.646/">ACL Anthology record →</a>
+                <a href="https://aclanthology.org/2022.lrec-1.646.pdf">Read paper →</a>
+              </div>
+            </div>
           </article>
-          <article class="card">
-            <h3>NLP, Generative AI & Computer Vision</h3>
-            <p>Language understanding, LLM evaluation, conversational AI, image and video analysis, and responsible multimodal AI systems.</p>
-          </article>
-          <article class="card">
-            <h3>Applied AI Strategy</h3>
-            <p>Problem framing, stakeholder discovery, technical roadmaps, product evaluation, and leadership across interdisciplinary teams.</p>
+
+          <article class="contribution-card">
+            <div>
+              <span class="contribution-index">Contribution 03</span>
+              <h3>Reproducible single-cell analysis for lung aging and disease</h3>
+              <p class="contribution-summary">Computational workflows for integrating heterogeneous single-cell RNA-sequencing cohorts and investigating cell-type-specific variation in human and mouse lung tissue.</p>
+            </div>
+            <div>
+              <div class="evidence-grid">
+                <div class="evidence-box">
+                  <strong>Scientific context</strong>
+                  <p>Multi-cohort lung datasets contain substantial biological and technical heterogeneity across donor status, age, injury, treatment, and experimental batch.</p>
+                </div>
+                <div class="evidence-box">
+                  <strong>Computational contribution</strong>
+                  <p>Built workflows spanning quality control, Harmony-based integration, cell-type annotation, differential expression, and pathway-level interpretation.</p>
+                </div>
+                <div class="evidence-box">
+                  <strong>Collaborative role</strong>
+                  <p>Translated pulmonary research questions into analytical plans, interpretable visualizations, and publication-ready findings.</p>
+                </div>
+                <div class="evidence-box">
+                  <strong>Research output</strong>
+                  <p>Contributed to peer-reviewed research on transcriptomic shifts in donated human lungs and severe obliterative bronchiolitis.</p>
+                </div>
+              </div>
+              <div class="link-row">
+                <a href="#publications">See selected biomedical publication →</a>
+                <a href="data/RamyaAkula_CV_2026.pdf">Review methods in CV →</a>
+              </div>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="alt" id="projects">
+    <section id="translation">
       <div class="container">
         <div class="section-heading">
-          <div>
-            <p class="eyebrow">Featured work</p>
-            <h2>Selected Projects</h2>
-            <p>Projects that demonstrate technical innovation, cross-domain problem solving, evaluation, and translation from research to practice.</p>
-          </div>
+          <p class="eyebrow">Research translation</p>
+          <h2>From technical research to practical use</h2>
+          <p>My experience includes commercialization, enterprise engineering, interdisciplinary collaboration, and technical education. These activities complement—not replace—my core identity as a research scientist.</p>
         </div>
 
-        <div class="grid-2">
-          <article class="card project-card">
-            <span class="project-label">Computational Biology</span>
-            <h3>Multi-Cohort Lung Single-Cell Analysis</h3>
-            <p>Developed scalable and reproducible workflows to integrate heterogeneous single-cell RNA-seq cohorts and study lung aging, donor status, cellular senescence, and cell-type variation.</p>
+        <div class="grid-3">
+          <article class="card path-card">
+            <h3>Research collaboration</h3>
+            <p>Interpretable AI, evaluation methods, computational biology, reproducible analysis, and interdisciplinary study design.</p>
             <ul>
-              <li>Multi-cohort integration and quality control</li>
-              <li>Cell-type annotation and differential expression</li>
-              <li>Biological interpretation with pulmonary collaborators</li>
+              <li>Method development and validation</li>
+              <li>Cross-domain research framing</li>
+              <li>Publication-oriented collaboration</li>
             </ul>
-            <p class="project-links"><a href="#publications">Related publication →</a></p>
           </article>
 
-          <article class="card project-card">
-            <span class="project-label">Trustworthy AI · NLP</span>
-            <h3>Interpretable Self-Attention for Sarcasm Detection</h3>
-            <p>Designed an interpretable multi-head self-attention architecture for reasoning about figurative language and semantic ambiguity in social media.</p>
+          <article class="card path-card">
+            <h3>Technical advisory</h3>
+            <p>Evidence-based support for teams evaluating AI methods, research prototypes, and scientific machine-learning workflows.</p>
             <ul>
-              <li>U.S. Patent 12,210,833</li>
-              <li>DARPA Forward Riser recognition</li>
-              <li>Peer-reviewed publication in <em>Entropy</em></li>
+              <li>Model and metric evaluation</li>
+              <li>Research and technical due diligence</li>
+              <li>Reproducibility and validation planning</li>
             </ul>
-            <p class="project-links"><a href="#recognition">View recognition →</a></p>
           </article>
 
-          <article class="card project-card">
-            <span class="project-label">Evaluation</span>
-            <h3>SPEED Score for Text Summarization</h3>
-            <p>Developed a sentence-pair-embedding-based evaluation metric for abstractive and extractive summarization, addressing limitations of surface-level overlap metrics.</p>
+          <article class="card path-card">
+            <h3>Venture exploration</h3>
+            <p>Early-stage problem discovery at the intersection of AI, scientific applications, and responsible product development.</p>
             <ul>
-              <li>Semantic quality evaluation</li>
-              <li>Comparison with established metrics</li>
-              <li>Published at LREC 2022</li>
+              <li>NSF I-Corps customer discovery</li>
+              <li>Patent-backed technical innovation</li>
+              <li>Startup Weekend product experience</li>
             </ul>
-            <p class="project-links"><a href="#publications">See publication →</a></p>
-          </article>
-
-          <article class="card project-card">
-            <span class="project-label">Commercialization</span>
-            <h3>NSF I-Corps: AI-Assisted Qualitative Analysis</h3>
-            <p>Served as Entrepreneurial Lead for an NSF-supported technology commercialization effort focused on translating AI research into a validated customer problem and market opportunity.</p>
-            <ul>
-              <li>Customer discovery and stakeholder interviews</li>
-              <li>Value proposition and use-case refinement</li>
-              <li>Technology validation and commercialization strategy</li>
-            </ul>
-            <p class="project-links"><a href="#recognition">View program details →</a></p>
-          </article>
-
-          <article class="card project-card">
-            <span class="project-label">AI for Social Good</span>
-            <h3>AI-Powered Online Youth Safety</h3>
-            <p>Contributed to an AI product concept for online youth safety that won first place at Startup Weekend Orlando.</p>
-            <ul>
-              <li>User-centered problem framing</li>
-              <li>Rapid product concept development</li>
-              <li>Cross-functional team collaboration</li>
-            </ul>
-            <p class="project-links"><a href="#recognition">View award →</a></p>
-          </article>
-
-          <article class="card project-card">
-            <span class="project-label">Enterprise Engineering</span>
-            <h3>Airbus A350 Product Structure Program</h3>
-            <p>Supported an enterprise product-structure transformation initiative for Airbus, combining stakeholder coordination, requirements gathering, estimation, and workflow tooling.</p>
-            <ul>
-              <li>Cross-functional stakeholder engagement</li>
-              <li>Requirements and milestone planning</li>
-              <li>Workflow optimization and technical implementation</li>
-            </ul>
-            <p class="project-links"><a href="#experience">See experience →</a></p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="experience">
+    <section class="alt" id="experience">
       <div class="container">
         <div class="section-heading">
-          <div>
-            <p class="eyebrow">Career</p>
-            <h2>Selected Experience</h2>
-            <p>Selected roles highlight my most relevant research, teaching, and enterprise experience. Additional positions are summarized below, with the complete chronology available in my CV.</p>
+          <p class="eyebrow">Selected experience</p>
+          <h2>Research, education, and engineering</h2>
+          <p>A career spanning academic AI research, biomedical computation, university teaching, and international enterprise engineering.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-meta">2024–2025<br>The Ohio State University</div>
+            <div>
+              <h3>Postdoctoral Scholar — Computational Biology & Machine Learning</h3>
+              <p class="organization">Department of Internal Medicine, Pulmonary</p>
+              <ul>
+                <li>Developed reproducible pipelines for multi-cohort single-cell RNA-sequencing integration and analysis.</li>
+                <li>Investigated transcriptomic signatures associated with lung aging, cellular senescence, donor status, and chronic lung injury.</li>
+                <li>Collaborated with pulmonary researchers on analysis design, biological interpretation, and publication-ready results.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-meta">2023–2024<br>University of Central Florida</div>
+            <div>
+              <h3>Lecturer — Computer Science & M.S. FinTech</h3>
+              <p class="organization">Department of Computer Science</p>
+              <ul>
+                <li>Taught graduate and undergraduate courses in artificial intelligence, NLP, machine learning, algorithms, fintech, and programming.</li>
+                <li>Mentored students across applied AI, data-science, research, and software-development projects.</li>
+                <li>Advised student teams on methodology, execution, and technical communication.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-meta">2018–2022<br>University of Central Florida</div>
+            <div>
+              <h3>Graduate Research Assistant — Trustworthy AI & NLP</h3>
+              <p class="organization">Complex Adaptive Systems Laboratory</p>
+              <ul>
+                <li>Developed interpretable models and evaluation methods for figurative language, toxic-language analysis, and text generation.</li>
+                <li>Conducted research under DARPA-supported programs, including SocialSim and ASIST.</li>
+                <li>Served as NSF I-Corps Entrepreneurial Lead for an AI-assisted qualitative-analysis technology.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-meta">2015–2017<br>Germany</div>
+            <div>
+              <h3>Project Engineer — Airbus A350 Program</h3>
+              <p class="organization">Umlaut GmbH, formerly P3 Group · Client: Airbus GmbH</p>
+              <ul>
+                <li>Supported a product-structure transformation program through requirements gathering, estimation, milestone planning, and engineering coordination.</li>
+                <li>Developed tooling to reduce computational overhead in product-structure workflows.</li>
+                <li>Worked in a large international engineering environment with multidisciplinary stakeholders.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark" id="recognition">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Independent validation</p>
+          <h2>Recognition, intellectual property, and sponsored research</h2>
+          <p>Links are provided where public verification is available. Citation metrics should be updated from Google Scholar and dated when the site is published.</p>
+        </div>
+
+        <div class="validation-grid">
+          <a class="validation-card" href="https://patents.google.com/patent/US12210833B2/en">
+            <strong>U.S. Patent 12,210,833</strong>
+            <span>Interpretable multi-head self-attention architecture, issued 2025.</span>
+          </a>
+          <a class="validation-card" href="https://forward.darpa.mil/risers">
+            <strong>DARPA Forward Riser</strong>
+            <span>Recognition for interpretable machine-learning research, 2022.</span>
+          </a>
+          <div class="validation-card">
+            <strong>DARPA-Supported Research</strong>
+            <span>Research participation associated with SocialSim and ASIST programs.</span>
+          </div>
+          <div class="validation-card">
+            <strong>NSF I-Corps</strong>
+            <span>Entrepreneurial Lead for customer discovery and technology commercialization.</span>
+          </div>
+          <div class="validation-card">
+            <strong>Startup Weekend Orlando</strong>
+            <span>First-place team contribution for an AI-powered youth-safety concept, 2021.</span>
+          </div>
+          <a class="validation-card" href="https://scholar.google.com/citations?user=ODweo2gAAAAJ&hl=en&oi=ao">
+            <strong>Research Citations</strong>
+            <span>View current citation record and publication profile on Google Scholar.</span>
+          </a>
+          <div class="validation-card">
+            <strong>University Teaching</strong>
+            <span>Graduate and undergraduate instruction across AI, NLP, machine learning, and computing.</span>
+          </div>
+          <div class="validation-card">
+            <strong>International Experience</strong>
+            <span>Research and engineering experience across the United States, Germany, and India.</span>
           </div>
         </div>
 
-        <div class="experience-list">
-          <article class="experience-item">
-            <div class="experience-top">
-              <div>
-                <h3>Postdoctoral Scholar</h3>
-                <p class="organization">The Ohio State University, Department of Internal Medicine (Pulmonary)</p>
-              </div>
-              <span class="date">2024–2025</span>
-            </div>
-            <ul>
-              <li>Developed reproducible computational workflows for integrating multi-cohort single-cell RNA-seq datasets.</li>
-              <li>Collaborated with pulmonary researchers to study lung aging, cellular senescence, and donor-related variation.</li>
-              <li>Led analysis design, cell-type annotation, statistical evaluation, and scientific interpretation.</li>
-            </ul>
-          </article>
-
-          <article class="experience-item">
-            <div class="experience-top">
-              <div>
-                <h3>Lecturer — Computer Science & MS FinTech</h3>
-                <p class="organization">University of Central Florida</p>
-              </div>
-              <span class="date">2023–2024</span>
-            </div>
-            <ul>
-              <li>Taught graduate and undergraduate courses in AI, NLP, machine learning, algorithms, fintech, and programming.</li>
-              <li>Mentored 60 graduate and 20 undergraduate students in applied AI, data science, and software projects.</li>
-              <li>Translated complex technical concepts for audiences with varied levels of experience.</li>
-            </ul>
-          </article>
-
-          <article class="experience-item">
-            <div class="experience-top">
-              <div>
-                <h3>Graduate Research Assistant</h3>
-                <p class="organization">University of Central Florida, Complex Adaptive Systems Laboratory</p>
-              </div>
-              <span class="date">2018–2022</span>
-            </div>
-            <ul>
-              <li>Conducted research in trustworthy AI, NLP, deep learning, explainability, and language evaluation.</li>
-              <li>Developed interpretable self-attention models and the SPEED Score summarization metric.</li>
-              <li>Contributed to research supported by DARPA SocialSim and DARPA ASIST.</li>
-            </ul>
-          </article>
-
-          <article class="experience-item">
-            <div class="experience-top">
-              <div>
-                <h3>Project Engineer — Client: Airbus GmbH</h3>
-                <p class="organization">Umlaut GmbH (formerly P3 Group), Germany</p>
-              </div>
-              <span class="date">2015–2017</span>
-            </div>
-            <ul>
-              <li>Supported the Airbus A350 product-structure transformation program.</li>
-              <li>Participated in stakeholder coordination, requirements gathering, estimation, and milestone planning.</li>
-              <li>Developed tooling to reduce computational overhead in product-structure workflows.</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="section-heading" style="margin-top: 48px; margin-bottom: 20px;">
-          <div>
-            <p class="eyebrow">Earlier career</p>
-            <h2 style="font-size: clamp(1.7rem, 3vw, 2.2rem);">Additional Industry & Research Experience</h2>
-            <p>Earlier roles that demonstrate industry exposure, international research experience, healthcare technology, and a strong software foundation.</p>
-          </div>
-        </div>
-
-        <div class="grid-2">
-          <article class="card">
-            <h3>Software Quality Assurance Analyst — Client: Roche GmbH</h3>
-            <p>Exco GmbH, Germany · 2013–2014</p>
-          </article>
-          <article class="card">
-            <h3>Graduate Research Assistant — AI Research</h3>
-            <p>DFKI GmbH, Germany · 2013</p>
-          </article>
-          <article class="card">
-            <h3>Graduate Research Assistant — Machine Learning & Visualization</h3>
-            <p>Technical University of Kaiserslautern-Landau, Germany · 2014–2015</p>
-          </article>
-          <article class="card">
-            <h3>Software Engineer</h3>
-            <p>Osmania University, India · 2011–2013</p>
-          </article>
-          <article class="card">
-            <h3>Software Developer — Client: United Health Care</h3>
-            <p>Inventurus Software Solutions, India · 2010–2011</p>
-          </article>
-          <article class="card">
-            <h3>Complete Professional History</h3>
-            <p>See the downloadable CV for full responsibilities, dates, education, publications, and technical details.</p>
-            <p style="margin-top: 12px;"><a href="data/RamyaAkula_CV_2026.pdf"><strong>Download CV →</strong></a></p>
-          </article>
-        </div>
+        <p class="verification-note">Accuracy note: public-facing claims should match the evidence submitted with any immigration filing. This website is a professional research portfolio, not a substitute for legal advice or petition documentation.</p>
       </div>
     </section>
 
     <section class="alt" id="publications">
       <div class="container">
         <div class="section-heading">
-          <div>
-            <p class="eyebrow">Research output</p>
-            <h2>Selected Publications</h2>
-            <p>Selected peer-reviewed work across biomedical analytics, interpretable machine learning, language evaluation, and social computing.</p>
-          </div>
-          <a class="button secondary" href="https://scholar.google.com/citations?user=ODweo2gAAAAJ&hl=en&oi=ao">Google Scholar</a>
+          <p class="eyebrow">Selected publications</p>
+          <h2>Peer-reviewed research</h2>
+          <p>Selected work demonstrating identifiable contributions in language evaluation, interpretable machine learning, social computing, and biomedical analytics.</p>
         </div>
 
         <div class="publication-list">
           <article class="publication">
-            <strong>Transcriptomic shifts in human lungs donated after brain and circulatory death and severe Obliterative Bronchiolitis</strong>
-            <p>Akula, R., et al. <em>The Journals of Gerontology</em>, 2026.</p>
+            <div class="publication-title">Transcriptomic shifts in human lungs donated after brain and circulatory death and severe Obliterative Bronchiolitis</div>
+            <p class="publication-meta">Akula, R., et al. <em>The Journals of Gerontology</em>, 2026.</p>
+            <div class="publication-links"><a href="https://scholar.google.com/citations?user=ODweo2gAAAAJ&hl=en&oi=ao">Locate through Google Scholar →</a></div>
           </article>
+
           <article class="publication">
-            <strong>Interpretable Multi-Head Self-Attention Architecture for Sarcasm Detection in Social Media</strong>
-            <p>Akula, R., & Garibay, I. <em>Entropy</em>, 2021.</p>
+            <div class="publication-title">Sentence Pair Embeddings Based Evaluation Metric for Abstractive and Extractive Summarization</div>
+            <p class="publication-meta">Akula, R., & Garibay, I. <em>LREC</em>, 2022.</p>
+            <div class="publication-links"><a href="https://aclanthology.org/2022.lrec-1.646/">ACL Anthology →</a></div>
           </article>
+
           <article class="publication">
-            <strong>SPEED Score: Sentence Pair Embeddings Based Evaluation Metric for Abstractive and Extractive Summarization</strong>
-            <p>Akula, R., & Garibay, I. <em>Language Resources and Evaluation Conference (LREC)</em>, 2022.</p>
+            <div class="publication-title">Interpretable Multi-Head Self-Attention Architecture for Sarcasm Detection in Social Media</div>
+            <p class="publication-meta">Akula, R., & Garibay, I. <em>Entropy</em>, 2021.</p>
+            <div class="publication-links"><a href="https://www.mdpi.com/1099-4300/23/4/394">Publisher record →</a></div>
           </article>
+
           <article class="publication">
-            <strong>Explainable Detection of Sarcasm in Social Media</strong>
-            <p>Akula, R., & Garibay, I. <em>ACL Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis</em>, 2021.</p>
+            <div class="publication-title">Explainable Detection of Sarcasm in Social Media</div>
+            <p class="publication-meta">Akula, R., & Garibay, I. <em>ACL Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis</em>, 2021.</p>
           </article>
+
           <article class="publication">
-            <strong>Ethical AI for Social Good</strong>
-            <p>Akula, R., & Garibay, I. <em>International Conference on Human–Computer Interaction</em>, 2021.</p>
+            <div class="publication-title">Ethical AI for Social Good</div>
+            <p class="publication-meta">Akula, R., & Garibay, I. <em>International Conference on Human–Computer Interaction</em>, 2021.</p>
           </article>
+
           <article class="publication">
-            <strong>Viztract: Visualization of Complex Social Networks for Easy User Perception</strong>
-            <p>Akula, R., & Garibay, I. <em>Big Data and Cognitive Computing</em>, 2018.</p>
+            <div class="publication-title">Viztract: Visualization of Complex Social Networks for Easy User Perception</div>
+            <p class="publication-meta">Akula, R., & Garibay, I. <em>Big Data and Cognitive Computing</em>, 2018.</p>
+          </article>
+        </div>
+
+        <div class="button-row">
+          <a class="button primary" href="https://scholar.google.com/citations?user=ODweo2gAAAAJ&hl=en&oi=ao">View Full Publication Record</a>
+          <a class="button secondary" href="data/RamyaAkula_CV_2026.pdf">Download CV</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="capabilities">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Methods and capabilities</p>
+          <h2>Technical depth grounded in completed work</h2>
+          <p>This section emphasizes methods demonstrated through research and professional experience rather than an exhaustive inventory of tools.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card capability-group">
+            <h3>Interpretable & trustworthy machine learning</h3>
+            <p>Attention-based interpretability, model evaluation, robustness-oriented analysis, human oversight, representation learning, and reproducible experimentation.</p>
+          </article>
+          <article class="card capability-group">
+            <h3>Natural language processing</h3>
+            <p>Transformer architectures, semantic similarity, text summarization, figurative-language understanding, toxic-language analysis, and evaluation metrics.</p>
+          </article>
+          <article class="card capability-group">
+            <h3>Computational biology</h3>
+            <p>Single-cell RNA sequencing, quality control, Harmony integration, cell annotation, differential expression, pathway analysis, and biological interpretation.</p>
+          </article>
+          <article class="card capability-group">
+            <h3>Scientific computing</h3>
+            <p>Python, R, PyTorch, TensorFlow, Scanpy, Seurat, Jupyter, Git, Linux, Docker, high-performance computing, and reproducible workflows.</p>
+          </article>
+          <article class="card capability-group">
+            <h3>Research communication</h3>
+            <p>Technical writing, peer-reviewed publication, interdisciplinary collaboration, course design, mentoring, and presentation of complex analytical findings.</p>
+          </article>
+          <article class="card capability-group">
+            <h3>Innovation translation</h3>
+            <p>Customer discovery, research-to-product framing, technical feasibility assessment, enterprise requirements, and collaboration across scientific and engineering teams.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="recognition">
+    <section class="alt" id="education">
       <div class="container">
         <div class="section-heading">
-          <div>
-            <p class="eyebrow">Recognition</p>
-            <h2>Awards, Impact & Sponsored Research</h2>
-          </div>
-        </div>
-
-        <div class="stats" aria-label="Research metrics">
-          <div class="stat"><strong>267</strong><span>Citations</span></div>
-          <div class="stat"><strong>9</strong><span>h-index</span></div>
-          <div class="stat"><strong>9</strong><span>i10-index</span></div>
-          <div class="stat"><strong>80</strong><span>Students mentored</span></div>
-        </div>
-
-        <div class="grid-2" style="margin-top: 24px;">
-          <article class="card">
-            <h3>U.S. Patent, 2025</h3>
-            <p>Interpretable Multi-Head Self-Attention Architecture for Sarcasm Detection. U.S. Patent 12,210,833.</p>
-          </article>
-          <article class="card">
-            <h3>DARPA Forward Riser, 2022</h3>
-            <p>Selected for innovative research in interpretable machine learning for figurative-language understanding.</p>
-          </article>
-          <article class="card">
-            <h3>First Place, Startup Weekend Orlando, 2021</h3>
-            <p>Recognized for developing an AI-powered online youth-safety product concept.</p>
-          </article>
-          <article class="card">
-            <h3>NSF I-Corps Entrepreneurial Lead, 2019</h3>
-            <p>Led customer discovery and commercialization activities for an AI-assisted qualitative-analysis platform.</p>
-          </article>
-        </div>
-
-        <div class="card" style="margin-top: 24px;">
-          <h3>Sponsored Research</h3>
-          <p><strong>DARPA ASIST:</strong> Applied machine learning to AI-assisted decision support for collaborative environments.</p>
-          <p style="margin-top: 10px;"><strong>DARPA SocialSim:</strong> Developed interpretable language-understanding methods for complex social-media interactions.</p>
-          <p style="margin-top: 10px;"><strong>NSF I-Corps:</strong> Translated AI research into customer discovery, commercialization strategy, and technology validation.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="alt" id="skills">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Capabilities</p>
-            <h2>Technical Expertise</h2>
-            <p>Technical fluency across NLP, generative AI, computer vision, trustworthy machine learning, biomedical computing, and reproducible workflows.</p>
-          </div>
-        </div>
-
-        <div class="skill-groups">
-          <article class="skill-group">
-            <h3>Natural Language Processing & Generative AI</h3>
-            <p>Large language models, transformer architectures, conversational AI, text summarization, semantic similarity, figurative-language understanding, toxicity detection, prompting, and model evaluation.</p>
-          </article>
-          <article class="skill-group">
-            <h3>Computer Vision & Video Analytics</h3>
-            <p>Image classification, object detection, object tracking, image segmentation, activity and event recognition, video-processing pipelines, multimodal analysis, and computer-vision model evaluation.</p>
-          </article>
-          <article class="skill-group">
-            <h3>Trustworthy AI & Machine Learning</h3>
-            <p>Interpretability, robustness, uncertainty, bias evaluation, human-AI collaboration, deep learning, representation learning, transfer learning, and reproducible evaluation.</p>
-          </article>
-          <article class="skill-group">
-            <h3>Computational Biology</h3>
-            <p>Single-cell RNA sequencing, Scanpy, Seurat, Harmony, differential expression, cell annotation, gene-set enrichment, transcriptomics, and high-dimensional biomedical data analysis.</p>
-          </article>
-          <article class="skill-group">
-            <h3>Tools & Reproducible Computing</h3>
-            <p>Python, R, PyTorch, TensorFlow, OpenCV, Jupyter, Git, Linux, Docker, statistical inference, high-performance computing, and reproducible workflows.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="education">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Education</p>
-            <h2>Academic Foundation</h2>
-          </div>
+          <p class="eyebrow">Education</p>
+          <h2>Academic foundation</h2>
         </div>
 
         <div class="grid-3">
           <article class="card">
             <h3>Ph.D., Computer Science</h3>
-            <p><a href="https://www.ucf.edu/">University of Central Florida</a>, 2022</p>
-            <p style="margin-top: 8px;">Dissertation: <em>Toxic and Figurative Language Detection and Evaluation Metrics for Social Media Content</em></p>
+            <p>University of Central Florida, 2022</p>
+            <p style="margin-top:10px;"><em>Toxic and Figurative Language Detection and Evaluation Metrics for Social Media Content</em></p>
           </article>
           <article class="card">
             <h3>M.S., Computer Science</h3>
-            <p><a href="https://www.uni-kl.de/">Technical University of Kaiserslautern</a>, 2015</p>
-            <p style="margin-top: 8px;">Thesis: <em>Hierarchical Visualization of Complex Social Networks</em></p>
+            <p>Technical University of Kaiserslautern, Germany, 2015</p>
+            <p style="margin-top:10px;"><em>Hierarchical Visualization of Complex Social Networks</em></p>
           </article>
           <article class="card">
             <h3>B.Tech., Computer Science Engineering</h3>
-            <p><a href="https://www.jntuh.ac.in/">Jawaharlal Nehru Technological University</a>, 2010</p>
+            <p>Jawaharlal Nehru Technological University, India, 2010</p>
           </article>
         </div>
       </div>
@@ -799,12 +1262,13 @@ layout: null
       <div class="container">
         <div class="contact-panel">
           <div>
-            <h2>Let’s connect</h2>
-            <p>I am interested in research, applied AI, healthcare AI, trustworthy AI, technical product strategy, teaching, and interdisciplinary leadership opportunities.</p>
+            <p class="eyebrow">Contact</p>
+            <h2>Discuss research, technical advisory, or venture collaboration</h2>
+            <p>I welcome serious conversations involving interpretable AI, language evaluation, scientific machine learning, computational biology, and responsible translation of research into practice.</p>
           </div>
-          <div class="button-row" style="margin: 0;">
-            <a class="button primary" href="mailto:ramya.akula01@gmail.com">Email Me</a>
-            <a class="button secondary" href="https://www.linkedin.com/in/ramya-nischala-akula-2900b5139/">LinkedIn</a>
+          <div class="button-row" style="margin-top:0;">
+            <a class="button primary" href="mailto:ramya.akula01@gmail.com">Email</a>
+            <a class="button dark" href="https://www.linkedin.com/in/ramya-nischala-akula-2900b5139/">LinkedIn</a>
           </div>
         </div>
       </div>
@@ -813,7 +1277,7 @@ layout: null
 
   <footer>
     <div class="container">
-      © 2026 Ramya Akula. Built with semantic HTML and responsive CSS.
+      © 2026 Ramya Akula. Research claims and metrics should be reviewed periodically for accuracy and linked to public evidence where available.
     </div>
   </footer>
 </body>
